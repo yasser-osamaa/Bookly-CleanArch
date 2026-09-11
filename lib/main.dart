@@ -2,6 +2,7 @@ import 'package:clean/constants.dart';
 import 'package:clean/features/splash/presentation/views/splash_viwe.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const Bookly());
@@ -16,7 +17,9 @@ class Bookly extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: kPrimaryColor,
         brightness: Brightness.dark,
-        fontFamily: 'GT Sectra Fine Regular',
+        textTheme: GoogleFonts.montserratAlternatesTextTheme(
+          ThemeData.dark().textTheme,
+        ),
       ),
       home: const SplashViwe(),
     );
