@@ -14,12 +14,7 @@ class BigBookListView extends StatelessWidget {
         itemCount: 6,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.only(
-              top: 20,
-              bottom: 20,
-              left: 10,
-              right: 10,
-            ),
+            padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
             child: BigBookItem(),
           );
         },
