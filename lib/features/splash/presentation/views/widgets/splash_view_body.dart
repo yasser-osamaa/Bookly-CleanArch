@@ -1,0 +1,69 @@
+import 'package:clean/features/home/presentation/views/home_view.dart';
+import 'package:clean/features/splash/presentation/views/widgets/sliding_text.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/state_manager.dart';
+
+class SplashViewBody extends StatefulWidget {
+  const new({super.key});
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animiationController;
+  late Animation<Offset> slidingAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    textAnimation();
+
+    navigateToHome();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animiationController.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Image.asset('assets/images/Logo.png'),
+        SizedBox(height: 4),
+        SlidingText(slidingAnimation: slidingAnimation),
+      ],
+    );
+  }
+
+  void textAnimation() {
+    animiationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    );
+
+    slidingAnimation = Tween<Offset>(
+      begin: Offset(0, 10),
+      end: Offset(0, 0),
+    ).animate(animiationController);
+
+    animiationController.forward();
+  }
+
+  void navigateToHome() {
+    Future.delayed(Duration(seconds: 3), () {
+      Get.to(
+        () => const HomeView(),
+        transition: Transition.fade,
+        duration: Duration(milliseconds: 500),
+      );
+    });
+  }
+}
