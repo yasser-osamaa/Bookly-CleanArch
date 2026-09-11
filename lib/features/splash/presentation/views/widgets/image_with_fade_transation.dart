@@ -1,3 +1,4 @@
+import 'package:clean/core/utils/assets_names.dart';
 import 'package:flutter/material.dart';
 
 class ImageWithFadeTransation extends StatelessWidget {
@@ -12,7 +13,7 @@ class ImageWithFadeTransation extends StatelessWidget {
       builder: (context, child) {
         return FadeTransition(
           opacity: fadeAnimation,
-          child: Image.asset('assets/images/Logo.png'),
+          child: Image.asset(AssetsNames.logoImage),
         );
       },
     );
