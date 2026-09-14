@@ -18,7 +18,7 @@ class BestSellerItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          BestSellerBook(),
+          BestSellerBookImg(),
           SizedBox(width: 30),
           Expanded(
             child: SizedBox(
