@@ -2,7 +2,7 @@ import 'package:clean/core/utils/app_router.dart';
 import 'package:clean/core/utils/styless.dart';
 import 'package:clean/features/home/presentation/views/widgets/best_seller_book_img.dart';
 import 'package:clean/features/home/presentation/views/widgets/book_and_author_name.dart';
-import 'package:clean/features/home/presentation/views/widgets/reate_row.dart';
+import 'package:clean/features/home/presentation/views/widgets/rate_row.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
