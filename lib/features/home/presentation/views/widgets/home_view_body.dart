@@ -1,8 +1,6 @@
 import 'package:clean/core/utils/styless.dart';
-import 'package:clean/features/home/presentation/views/widgets/best_seller_book_item.dart';
+import 'package:clean/features/home/presentation/views/widgets/best_seller_item.dart';
 import 'package:clean/features/home/presentation/views/widgets/big_book_list_view.dart';
-import 'package:clean/features/home/presentation/views/widgets/book_and_author_name.dart';
-import 'package:clean/features/home/presentation/views/widgets/price_and_reate_row.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -20,20 +18,7 @@ class HomeViewBody extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(left: 10),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              BestSellerBook(),
-              SizedBox(width: 30),
-              SizedBox(
-                height: 150,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [BookAndAuthorName(), Spacer(), PriceAndRateRow()],
-                ),
-              ),
-            ],
-          ),
+          child: BestSellerItem(),
         ),
       ],
     );
