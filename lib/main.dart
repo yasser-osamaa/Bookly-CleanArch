@@ -1,7 +1,6 @@
 import 'package:clean/constants.dart';
-import 'package:clean/features/splash/presentation/views/splash_viwe.dart';
+import 'package:clean/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -12,7 +11,8 @@ class Bookly extends StatelessWidget {
   const Bookly({super.key});
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: kPrimaryColor,
@@ -21,7 +21,6 @@ class Bookly extends StatelessWidget {
           ThemeData.dark().textTheme,
         ),
       ),
-      home: const SplashViwe(),
     );
   }
 }
