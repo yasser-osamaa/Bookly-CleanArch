@@ -1,5 +1,6 @@
 import 'package:clean/features/home/presentation/views/detailes_view.dart';
 import 'package:clean/features/home/presentation/views/home_view.dart';
+import 'package:clean/features/search/presentation/views/search_view.dart';
 import 'package:clean/features/splash/presentation/views/splash_viwe.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -8,6 +9,8 @@ abstract class AppRouter {
   static const kHomeView = '/homeView';
 
   static const kDetailesView = '/detailesView';
+
+  static const kDsearchView = '/searchView';
 
   static GoRouter router = GoRouter(
     routes: [
@@ -35,7 +38,21 @@ abstract class AppRouter {
         pageBuilder: (context, state) {
           return CustomTransitionPage(
             child: const DetailesView(),
-            transitionDuration: const Duration(milliseconds: 600),
+            transitionDuration: const Duration(milliseconds: 500),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+          );
+        },
+      ),
+
+      GoRoute(
+        path: kDsearchView,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: const SearchView(),
+            transitionDuration: const Duration(milliseconds: 400),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
                   return FadeTransition(opacity: animation, child: child);
