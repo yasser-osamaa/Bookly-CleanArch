@@ -17,7 +17,10 @@ class HomeView extends StatelessWidget {
           SizedBox(width: 20),
           Image.asset(AssetsNames.logoImage, height: 30),
           Spacer(),
-          FaIcon(FontAwesomeIcons.magnifyingGlass),
+          IconButton(
+            onPressed: () {},
+            icon: FaIcon(FontAwesomeIcons.magnifyingGlass),
+          ),
           SizedBox(width: 20),
         ],
       ),
