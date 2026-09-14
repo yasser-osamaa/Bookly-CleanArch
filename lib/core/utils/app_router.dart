@@ -1,3 +1,4 @@
+import 'package:clean/features/home/presentation/views/detailes_view.dart';
 import 'package:clean/features/home/presentation/views/home_view.dart';
 import 'package:clean/features/splash/presentation/views/splash_viwe.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,19 @@ abstract class AppRouter {
         pageBuilder: (context, state) {
           return CustomTransitionPage(
             child: const HomeView(),
+            transitionDuration: const Duration(milliseconds: 600),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+          );
+        },
+      ),
+      GoRoute(
+        path: kDetailesView,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: const DetailesView(),
             transitionDuration: const Duration(milliseconds: 600),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
