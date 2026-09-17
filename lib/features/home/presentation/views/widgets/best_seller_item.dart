@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const new({super.key});
+  const BestSellerItem({super.key});
 
   @override
   Widget build(BuildContext context) {

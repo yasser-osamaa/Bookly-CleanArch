@@ -4,7 +4,7 @@ import 'package:clean/features/splash/presentation/views/widgets/sliding_text.da
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {
-  const new({super.key});
+  const SplashViewBody({super.key});
 
   @override
   State<SplashViewBody> createState() => _SplashViewBodyState();

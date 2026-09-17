@@ -4,7 +4,7 @@ import 'package:clean/features/home/presentation/views/widgets/big_book_list_vie
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const new({super.key});
+  const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

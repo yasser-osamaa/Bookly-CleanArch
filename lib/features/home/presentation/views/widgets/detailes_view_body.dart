@@ -5,7 +5,7 @@ import 'package:clean/features/home/presentation/views/widgets/rate_row.dart';
 import 'package:flutter/material.dart';
 
 class DetailesViewBody extends StatelessWidget {
-  const new({super.key});
+  const DetailesViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

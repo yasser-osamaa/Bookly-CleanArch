@@ -2,7 +2,7 @@ import 'package:clean/core/utils/styless.dart';
 import 'package:flutter/material.dart';
 
 class BookAndAuthorName extends StatelessWidget {
-  const new({super.key});
+  const BookAndAuthorName({super.key});
 
   @override
   Widget build(BuildContext context) {

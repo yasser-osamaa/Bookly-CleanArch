@@ -2,7 +2,7 @@ import 'package:clean/features/home/presentation/views/widgets/big_book_item.dar
 import 'package:flutter/material.dart';
 
 class AlsoLikeListView extends StatelessWidget {
-  const new({super.key});
+  const AlsoLikeListView({super.key});
 
   @override
   Widget build(BuildContext context) {

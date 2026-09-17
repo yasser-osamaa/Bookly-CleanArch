@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BigBookItem extends StatelessWidget {
-  const new({super.key});
+  const BigBookItem({super.key});
 
   @override
   Widget build(BuildContext context) {

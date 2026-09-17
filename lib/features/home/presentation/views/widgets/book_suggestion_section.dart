@@ -3,7 +3,7 @@ import 'package:clean/features/home/presentation/views/widgets/also_like_list_vi
 import 'package:flutter/material.dart';
 
 class BookSuggestionSection extends StatelessWidget {
-  const new({super.key});
+  const BookSuggestionSection({super.key});
 
   @override
   Widget build(BuildContext context) {

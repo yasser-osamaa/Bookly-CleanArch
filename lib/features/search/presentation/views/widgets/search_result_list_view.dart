@@ -2,7 +2,7 @@ import 'package:clean/features/home/presentation/views/widgets/best_seller_item.
 import 'package:flutter/material.dart';
 
 class SearchResultListView extends StatelessWidget {
-  const new({super.key});
+  const SearchResultListView({super.key});
 
   @override
   Widget build(BuildContext context) {

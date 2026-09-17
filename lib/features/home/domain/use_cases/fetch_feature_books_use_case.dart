@@ -7,7 +7,7 @@ import 'package:dartz/dartz.dart';
 class FetchFeatureBooksUseCase extends UseCase<List<BookEntity>, void> {
   final HomeRepo homeRepo;
 
-  new({required this.homeRepo});
+  FetchFeatureBooksUseCase({required this.homeRepo});
 
   @override
   Future<Either<Failures, List<BookEntity>>> call([void param]) {

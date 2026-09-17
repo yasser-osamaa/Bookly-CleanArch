@@ -2,7 +2,7 @@ import 'package:clean/core/utils/assets_names.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerBookImg extends StatelessWidget {
-  const new({super.key});
+  const BestSellerBookImg({super.key});
 
   @override
   Widget build(BuildContext context) {

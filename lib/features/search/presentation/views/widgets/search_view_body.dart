@@ -4,7 +4,7 @@ import 'package:clean/features/search/presentation/views/widgets/search_text_fie
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
-  const new({super.key});
+  const SearchViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

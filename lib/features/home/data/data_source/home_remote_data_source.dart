@@ -11,7 +11,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   final ApiService apiService;
   final _apiKey = 'AIzaSyBO1uswpYNMZX2ynT07zna8b3MjuVfZLZM';
 
-  new({required this.apiService});
+  HomeRemoteDataSourceImpl({required this.apiService});
   @override
   Future<List<BookEntity>> fetchFeaturedBooks() async {
     var data = await apiService.get(
