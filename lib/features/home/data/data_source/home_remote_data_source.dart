@@ -1,4 +1,6 @@
+import 'package:clean/constants.dart';
 import 'package:clean/core/utils/api_service.dart';
+import 'package:clean/core/utils/functions/add_books_to_box.dart';
 import 'package:clean/features/home/data/models/book_model/book_model.dart';
 import 'package:clean/features/home/domain/entites/book_entity.dart';
 
@@ -20,6 +22,8 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
 
     List<BookEntity> books = extractBooksFromJson(data);
 
+    addBooksToBox(books, kFeaturedBox);
+
     return books;
   }
 
@@ -31,6 +35,8 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
     );
 
     List<BookEntity> books = extractBooksFromJson(data);
+
+    addBooksToBox(books, kNewestBox);
     return books;
   }
 
