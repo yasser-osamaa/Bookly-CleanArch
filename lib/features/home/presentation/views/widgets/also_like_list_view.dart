@@ -13,7 +13,7 @@ class AlsoLikeListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(left: 20),
-          child: BigBookItem(),
+          child: BigBookItem(img: ''),
         );
       },
     );

@@ -13,7 +13,7 @@ class BookDataSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .29),
-          child: BigBookItem(),
+          child: BigBookItem(img: ''),
         ),
         SizedBox(height: 30),
         SizedBox(

@@ -17,7 +17,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   @override
   Future<List<BookEntity>> fetchFeaturedBooks() async {
     var data = await apiService.get(
-      endpoint: 'volumes?q=harrypotter&filter=free-ebooks&key=$_apiKey',
+      endpoint: 'volumes?q=science&filter=free-ebooks&key=$_apiKey',
     );
 
     List<BookEntity> books = extractBooksFromJson(data);
