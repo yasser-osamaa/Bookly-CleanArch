@@ -16,7 +16,7 @@ class BigBookListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
-            child: BigBookItem(img: books[index].bookImg),
+            child: BigBookItem(book: books[index]),
           );
         },
       ),

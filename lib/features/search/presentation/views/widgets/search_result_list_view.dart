@@ -1,4 +1,4 @@
-import 'package:clean/features/home/presentation/views/widgets/best_seller_item.dart';
+//import 'package:clean/features/home/presentation/views/widgets/best_seller_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultListView extends StatelessWidget {
@@ -12,7 +12,7 @@ class SearchResultListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(bottom: 20, left: 20),
-          child: BestSellerItem(),
+          //child: BestSellerItem(),
         );
       },
     );

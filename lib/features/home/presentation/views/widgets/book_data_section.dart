@@ -1,10 +1,11 @@
 import 'package:clean/core/utils/styless.dart';
+import 'package:clean/features/home/domain/entites/book_entity.dart';
 import 'package:clean/features/home/presentation/views/widgets/big_book_item.dart';
 import 'package:flutter/material.dart';
 
 class BookDataSection extends StatelessWidget {
-  const BookDataSection({super.key});
-
+  const BookDataSection({super.key, required this.book});
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
@@ -13,13 +14,13 @@ class BookDataSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .29),
-          child: BigBookItem(img: ''),
+          child: BigBookItem(book: book),
         ),
         SizedBox(height: 30),
         SizedBox(
           width: width * .7,
           child: Text(
-            'Harry Potter and The Goblet of Fire',
+            book.title,
             style: Styless.textStyle24,
             textAlign: TextAlign.center,
           ),
@@ -30,7 +31,7 @@ class BookDataSection extends StatelessWidget {
           child: Opacity(
             opacity: .7,
             child: Text(
-              'J.K Roling',
+              book.authorName,
               style: Styless.textStyle16,
               textAlign: TextAlign.center,
             ),

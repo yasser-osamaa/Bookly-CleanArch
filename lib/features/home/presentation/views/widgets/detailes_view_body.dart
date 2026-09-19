@@ -1,12 +1,12 @@
+import 'package:clean/features/home/domain/entites/book_entity.dart';
 import 'package:clean/features/home/presentation/views/widgets/book_data_section.dart';
 import 'package:clean/features/home/presentation/views/widgets/book_suggestion_section.dart';
 import 'package:clean/features/home/presentation/views/widgets/custom_preview_button.dart';
-import 'package:clean/features/home/presentation/views/widgets/rate_row.dart';
 import 'package:flutter/material.dart';
 
 class DetailesViewBody extends StatelessWidget {
-  const DetailesViewBody({super.key});
-
+  const DetailesViewBody({super.key, required this.book});
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -16,13 +16,13 @@ class DetailesViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              BookDataSection(),
+              BookDataSection(book: book),
               SizedBox(height: 10),
-              RateRow(),
+              //RateRow(book: null,),
               SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: CustomPreviewButton(),
+                child: CustomPreviewButton(book: book),
               ),
               Expanded(child: SizedBox(height: 40)),
               BookSuggestionSection(),

@@ -1,5 +1,5 @@
 import 'package:clean/core/utils/styless.dart';
-import 'package:clean/features/home/presentation/views/widgets/best_seller_sliver_list_view.dart';
+import 'package:clean/features/home/presentation/views/widgets/best_seller_sliver_list_view_bloc_builder.dart';
 import 'package:clean/features/home/presentation/views/widgets/big_books_list_view_bloc_builder.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +23,7 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        BestSellerSliverListView(),
+        BestSellerSliverListViewBlocBuilder(),
       ],
     );
   }

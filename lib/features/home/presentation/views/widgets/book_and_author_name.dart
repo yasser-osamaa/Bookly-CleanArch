@@ -1,9 +1,10 @@
 import 'package:clean/core/utils/styless.dart';
+import 'package:clean/features/home/domain/entites/book_entity.dart';
 import 'package:flutter/material.dart';
 
 class BookAndAuthorName extends StatelessWidget {
-  const BookAndAuthorName({super.key});
-
+  const BookAndAuthorName({super.key, required this.book});
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -12,14 +13,14 @@ class BookAndAuthorName extends StatelessWidget {
         SizedBox(
           width: MediaQuery.sizeOf(context).width * .5,
           child: Text(
-            'Harry Potter and The Goblet of Fire',
+            book.title,
             style: Styless.textStyle20,
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
           ),
         ),
         Text(
-          'J.K Roling',
+          book.authorName,
           style: Styless.textStyle16.copyWith(color: Colors.grey),
         ),
       ],

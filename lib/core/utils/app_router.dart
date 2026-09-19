@@ -1,3 +1,4 @@
+import 'package:clean/features/home/domain/entites/book_entity.dart';
 import 'package:clean/features/home/presentation/views/detailes_view.dart';
 import 'package:clean/features/home/presentation/views/home_view.dart';
 import 'package:clean/features/search/presentation/views/search_view.dart';
@@ -36,8 +37,9 @@ abstract class AppRouter {
       GoRoute(
         path: kDetailesView,
         pageBuilder: (context, state) {
+          final book = state.extra as BookEntity;
           return CustomTransitionPage(
-            child: const DetailesView(),
+            child: DetailesView(book: book),
             transitionDuration: const Duration(milliseconds: 500),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {

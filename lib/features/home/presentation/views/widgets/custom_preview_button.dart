@@ -1,9 +1,10 @@
 import 'package:clean/core/widgets/custom_button.dart';
+import 'package:clean/features/home/domain/entites/book_entity.dart';
 import 'package:flutter/material.dart';
 
 class CustomPreviewButton extends StatelessWidget {
-  const CustomPreviewButton({super.key});
-
+  const CustomPreviewButton({super.key, required this.book});
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,7 +17,7 @@ class CustomPreviewButton extends StatelessWidget {
           ),
           backgroundColor: Color(0xffef8262),
           textColor: Colors.white,
-          text: '19.99EGP',
+          text: "${book.price} EGP",
         ),
         CustomButton(
           borderRadius: BorderRadiusGeometry.only(
