@@ -6,6 +6,14 @@ final class FetchFeatureBooksInitial extends FetchFeatureBooksState {}
 
 final class FetchFeatureBooksLoading extends FetchFeatureBooksState {}
 
+final class FetchFeatureBooksPagnagingLoading extends FetchFeatureBooksState {}
+
+final class FetchFeatureBooksPagnagingFailure extends FetchFeatureBooksState {
+  final String errorText;
+
+  new({required this.errorText});
+}
+
 final class FetchFeatureBooksFailure extends FetchFeatureBooksState {
   final String errorText;
 

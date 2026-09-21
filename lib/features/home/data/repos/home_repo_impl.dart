@@ -16,13 +16,15 @@ class HomeRepoImpl implements HomeRepo {
   });
 
   @override
-  Future<Either<Failures, List<BookEntity>>> fetchFeaturedBooks() async {
+  Future<Either<Failures, List<BookEntity>>> fetchFeaturedBooks({
+    int pageNum = 0,
+  }) async {
     List<BookEntity> books;
     try {
-      books = homeLocalDataSource.fetchFeaturedBooks();
+      books = homeLocalDataSource.fetchFeaturedBooks(pageNum: pageNum);
       if (books.isNotEmpty) return right(books);
 
-      books = await homeRemoteDataSource.fetchFeaturedBooks();
+      books = await homeRemoteDataSource.fetchFeaturedBooks(pageNum: pageNum);
       return right(books);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioException(e));
