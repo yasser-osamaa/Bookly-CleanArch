@@ -23,6 +23,8 @@ class BookDataSection extends StatelessWidget {
             book.title,
             style: Styless.textStyle24,
             textAlign: TextAlign.center,
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
         SizedBox(height: 5),
