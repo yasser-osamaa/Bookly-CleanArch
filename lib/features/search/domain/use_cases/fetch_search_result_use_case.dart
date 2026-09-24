@@ -15,8 +15,12 @@ class FetchSearchResultUseCase
   Future<Either<Failures, List<BookEntity>>> call([
     SearchParams? searchParam,
   ]) async {
+    if (searchParam == null || searchParam.search.trim().isEmpty) {
+      return left(ServerFailure('Search query cannot be empty'));
+    }
+
     return await searchRepo.fetchSearchResult(
-      search: searchParam!.search,
+      search: searchParam.search.trim(),
       pageNum: searchParam.pageNum,
     );
   }
