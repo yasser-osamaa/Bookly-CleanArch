@@ -7,5 +7,7 @@ abstract class HomeRepo {
     int pageNum = 0,
   });
 
-  Future<Either<Failures, List<BookEntity>>> fetchNewestBooks();
+  Future<Either<Failures, List<BookEntity>>> fetchNewestBooks({
+    int pageNum = 0,
+  });
 }

@@ -6,7 +6,7 @@ import 'package:clean/features/home/domain/entites/book_entity.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks({int pageNum = 0});
-  Future<List<BookEntity>> fetchNewestBooks();
+  Future<List<BookEntity>> fetchNewestBooks({int pageNum = 0});
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -29,10 +29,10 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   }
 
   @override
-  Future<List<BookEntity>> fetchNewestBooks() async {
+  Future<List<BookEntity>> fetchNewestBooks({int pageNum = 0}) async {
     var data = await apiService.get(
       endpoint:
-          'volumes?q=harrypotter&filter=free-ebooks&orderBy=newest&key=$_apiKey',
+          'volumes?q=programming&filter=free-ebooks&orderBy=newest&key=$_apiKey&startIndex=${pageNum * 10}',
     );
 
     List<BookEntity> books = extractBooksFromJson(data);

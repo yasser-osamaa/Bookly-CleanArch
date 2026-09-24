@@ -12,6 +12,14 @@ final class FetchNewestBooksFailure extends FetchNewestBooksState {
 
 final class FetchNewestBooksLoading extends FetchNewestBooksState {}
 
+final class FetchNewestBooksPagnationLoading extends FetchNewestBooksState {}
+
+final class FetchNewestBooksPagnationFailure extends FetchNewestBooksState {
+  final String errorText;
+
+  new({required this.errorText});
+}
+
 final class FetchNewestBooksSuccess extends FetchNewestBooksState {
   final List<BookEntity> books;
 
