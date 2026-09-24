@@ -1,8 +1,11 @@
+import 'package:clean/constants.dart';
 import 'package:clean/core/utils/snackbars/error_snack_bar.dart';
+import 'package:clean/features/home/domain/entites/book_entity.dart';
 import 'package:clean/features/search/presentation/manager/cubit/fetch_search_result_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hive/hive.dart';
 
 class SearchTextField extends StatelessWidget {
   const SearchTextField({super.key});
@@ -18,6 +21,8 @@ class SearchTextField extends StatelessWidget {
             return;
           }
 
+          Box<BookEntity> box = Hive.box<BookEntity>(kSearchtBox);
+          box.clear();
           context.read<FetchSearchResultCubit>().fetchSearchResult(
             search: value.trim(),
           );

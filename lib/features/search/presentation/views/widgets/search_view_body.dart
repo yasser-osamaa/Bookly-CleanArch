@@ -1,5 +1,5 @@
 import 'package:clean/core/utils/styless.dart';
-import 'package:clean/features/search/presentation/views/widgets/search_result_list_view.dart';
+import 'package:clean/features/search/presentation/views/widgets/search_result_list_view_bloc_consumer.dart';
 import 'package:clean/features/search/presentation/views/widgets/search_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class SearchViewBody extends StatelessWidget {
           padding: const EdgeInsets.only(left: 30, bottom: 20),
           child: Text('Search Result', style: Styless.textStyle24),
         ),
-        Expanded(child: SearchResultListView()),
+        SearchResultListViewBlocConsumer(),
       ],
     );
   }

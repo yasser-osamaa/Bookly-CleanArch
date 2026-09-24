@@ -11,19 +11,24 @@ class FetchSearchResultCubit extends Cubit<FetchSearchResultState> {
 
   final FetchSearchResultUseCase fetchSearchResultUseCase;
 
+  String searchT = '';
+
   Future<void> fetchSearchResult({
     required String search,
     int pageNum = 0,
   }) async {
-    var result = await fetchSearchResultUseCase.call(
-      SearchParams(search: search, pageNum: pageNum),
-    );
-
     if (pageNum == 0) {
       emit(FetchSearchResultLoading());
     } else {
       emit(FetchSearchResultPagnationLoading());
     }
+
+    searchT = search;
+
+    var result = await fetchSearchResultUseCase.call(
+      SearchParams(search: search, pageNum: pageNum),
+    );
+
     result.fold(
       (fail) {
         if (pageNum == 0) {

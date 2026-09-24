@@ -33,8 +33,6 @@ void setupServiceLocator() {
     FetchNewestBooksUseCase(homeRepo: locator.get<HomeRepoImpl>()),
   );
 
-  locator.registerSingleton<ApiService>(ApiService(Dio()));
-
   // search feature
   locator.registerSingleton<FetchSearchResultUseCase>(
     FetchSearchResultUseCase(
