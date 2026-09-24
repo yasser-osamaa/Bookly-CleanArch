@@ -18,7 +18,7 @@ class SearchViewBody extends StatelessWidget {
           padding: const EdgeInsets.only(left: 30, bottom: 20),
           child: Text('Search Result', style: Styless.textStyle24),
         ),
-        SearchResultListViewBlocConsumer(),
+        Expanded(child: SearchResultListViewBlocConsumer()),
       ],
     );
   }

@@ -3,6 +3,7 @@ import 'package:clean/core/utils/api_service.dart';
 import 'package:clean/core/utils/functions/add_books_to_box.dart';
 import 'package:clean/features/home/data/models/book_model/book_model.dart';
 import 'package:clean/features/home/domain/entites/book_entity.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 abstract class SearchRemoteDataSource {
   Future<List<BookEntity>> fetchSearchResult({
@@ -13,6 +14,7 @@ abstract class SearchRemoteDataSource {
 
 class SearchReamoteDataSourceImpl implements SearchRemoteDataSource {
   final ApiService _apiService;
+  final apiKey = dotenv.env['GOOGLE_BOOKS_API_KEY'];
 
   SearchReamoteDataSourceImpl({required this._apiService});
   @override
@@ -22,7 +24,7 @@ class SearchReamoteDataSourceImpl implements SearchRemoteDataSource {
   }) async {
     var map = await _apiService.get(
       endpoint:
-          'volumes?q=$searchText&filter=free-ebooks&key=AIzaSyBO1uswpYNMZX2ynT07zna8b3MjuVfZLZM&startIndex=${pageNum * 10}',
+          'volumes?q=$searchText&filter=free-ebooks&key=$apiKey&startIndex=${pageNum * 10}',
     );
     List<BookEntity> books = searchResultBooks(map);
     addBooksToBox(books, kSearchtBox);

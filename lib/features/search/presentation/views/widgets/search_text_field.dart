@@ -15,17 +15,18 @@ class SearchTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: TextField(
-        onSubmitted: (value) {
+        onSubmitted: (value) async {
           if (value.trim().isEmpty) {
             showErrorSnackBar(context, 'Please enter a book name');
             return;
           }
+          final cubit = context.read<FetchSearchResultCubit>();
 
           Box<BookEntity> box = Hive.box<BookEntity>(kSearchtBox);
-          box.clear();
-          context.read<FetchSearchResultCubit>().fetchSearchResult(
-            search: value.trim(),
-          );
+
+          await box.clear();
+
+          cubit.fetchSearchResult(search: value.trim());
         },
         decoration: InputDecoration(
           suffixIcon: const Padding(

@@ -34,26 +34,22 @@ class _SearchResultListViewBlocConsumerState
         if (state is FetchSearchResultSuccess ||
             state is FetchSearchResultPagnationLoading ||
             state is FetchSearchResultPagnationFailure) {
-          return Expanded(
-            child: SearchResultListView(
-              search: context.read<FetchSearchResultCubit>().searchT,
-              books: books,
-            ),
+          return SearchResultListView(
+            search: context.read<FetchSearchResultCubit>().searchT,
+            books: books,
           );
         } else if (state is FetchSearchResultInitial) {
-          return Expanded(
-            child: Center(
-              child: Text(
-                'Please Search First For the Results',
-                style: Styless.textStyle30,
-                textAlign: TextAlign.center,
-              ),
+          return Center(
+            child: Text(
+              'Please Search First For the Results',
+              style: Styless.textStyle30,
+              textAlign: TextAlign.center,
             ),
           );
         } else if (state is FetchSearchResultFailure) {
-          return Expanded(child: Center(child: Text(state.errorText)));
+          return Center(child: Text(state.errorText));
         } else {
-          return Expanded(child: Center(child: CircularProgressIndicator()));
+          return Center(child: CircularProgressIndicator());
         }
       },
     );
