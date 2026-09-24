@@ -13,6 +13,7 @@ class BigBookItem extends StatelessWidget {
       aspectRatio: 2.5 / 3.8,
       child: GestureDetector(
         onTap: () {
+          //context.read<FetchNewestBooksCubit>().fetchNewestBooks();
           context.push(AppRouter.kDetailesView, extra: book);
         },
         // child: Container(

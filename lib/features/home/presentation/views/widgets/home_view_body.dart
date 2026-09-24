@@ -73,7 +73,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           ),
         ),
 
-        BestSellerSliverListViewBlocBuilder(),
+        BestSellerSliverListViewBlocConsumer(),
       ],
     );
   }

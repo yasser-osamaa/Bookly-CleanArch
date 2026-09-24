@@ -5,16 +5,16 @@ import 'package:clean/features/home/presentation/views/widgets/best_seller_slive
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BestSellerSliverListViewBlocBuilder extends StatefulWidget {
-  const BestSellerSliverListViewBlocBuilder({super.key});
+class BestSellerSliverListViewBlocConsumer extends StatefulWidget {
+  const BestSellerSliverListViewBlocConsumer({super.key});
 
   @override
-  State<BestSellerSliverListViewBlocBuilder> createState() =>
-      _BestSellerSliverListViewBlocBuilderState();
+  State<BestSellerSliverListViewBlocConsumer> createState() =>
+      _BestSellerSliverListViewBlocConsumerState();
 }
 
-class _BestSellerSliverListViewBlocBuilderState
-    extends State<BestSellerSliverListViewBlocBuilder> {
+class _BestSellerSliverListViewBlocConsumerState
+    extends State<BestSellerSliverListViewBlocConsumer> {
   List<BookEntity> books = [];
 
   @override

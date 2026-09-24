@@ -1,5 +1,5 @@
 import 'package:clean/core/utils/styless.dart';
-import 'package:clean/features/home/presentation/views/widgets/also_like_list_view_bloc_builder.dart';
+import 'package:clean/features/home/presentation/views/widgets/also_like_list_view_bloc_consumer.dart';
 import 'package:flutter/material.dart';
 
 class BookSuggestionSection extends StatelessWidget {
@@ -17,7 +17,7 @@ class BookSuggestionSection extends StatelessWidget {
         SizedBox(height: 15),
         SizedBox(
           height: MediaQuery.sizeOf(context).height * .2,
-          child: AlsoLikeListViewBlocBuilder(),
+          child: AlsoLikeListViewBlocConsumer(),
         ),
       ],
     );
